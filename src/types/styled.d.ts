@@ -5,15 +5,18 @@ import "styled-components";
 declare module "styled-components" {
   export interface DefaultTheme {
     device: {
-      mobile: string;
       tablet: string;
+      desktop: string;
     };
     color: {
       main: string;
       black: string;
       white: string;
+      darkgrey: string;
       grey: string;
       border: string;
+      background: string;
+      point: string;
     };
   }
 }
