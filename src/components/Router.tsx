@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 // components
+import Header from "../components/Header";
 import Intro from "../page/Intro";
 import Home from "../page/Home";
 import WritePost from "../page/WritePost";
@@ -15,6 +16,7 @@ import Join from "../page/Join";
 const Router = () => {
   return (
     <BrowserRouter>
+      <Header />
       <Switch>
         <Route path="/" component={Intro} exact />
         <Route path="/login" component={Login} exact />
