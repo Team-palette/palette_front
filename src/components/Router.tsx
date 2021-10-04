@@ -12,6 +12,7 @@ import Search from "../page/Search";
 import MyPage from "../page/MyPage";
 import Login from "../page/Login";
 import Join from "../page/Join";
+import MNav from "./MNavBar";
 
 const Router = () => {
   return (
@@ -30,6 +31,7 @@ const Router = () => {
         <Route path="/develop" component={Tester} exact />
         <Redirect to="/" />
       </Switch>
+      <MNav />
     </BrowserRouter>
   );
 };
