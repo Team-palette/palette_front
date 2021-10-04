@@ -4,6 +4,7 @@ export type TUser = {
   email: string;
   nickname: string;
   isLogin: boolean;
+  avatar: string;
 };
 
 export type THome = {

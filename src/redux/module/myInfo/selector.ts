@@ -5,6 +5,9 @@ import { TState } from "../../types";
 export const getLoginStatus = (state: TState): boolean =>
   state.myInfo.user.data.isLogin;
 
+export const getMyAvatar = (state: TState): string =>
+  state.myInfo.user.data.avatar;
+
 // home selector
 export const getHomeTitle = (state: TState): string =>
   state.myInfo.home.data.title;
