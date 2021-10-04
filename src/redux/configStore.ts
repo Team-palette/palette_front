@@ -2,16 +2,19 @@ import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
 import { all } from "@redux-saga/core/effects";
 import { todosWatch } from "./module/todos/sagas";
+import { myInfoWatcher } from "./module/myInfo/sagas";
 import todoSlice from "./module/todos/todos";
+import myInfoSlice from "./module/myInfo/myInfo";
 
 const sagaMiddleWare = createSagaMiddleware(); // redux-saga 미들웨어 설정
 function* rootSaga() {
-  yield all([todosWatch()]); // rootSaga에서는 생성한 watch함수들을 모두 넣어줍니다.
+  yield all([todosWatch(), myInfoWatcher()]); // rootSaga에서는 생성한 watch함수들을 모두 넣어줍니다.
 }
 
 const store = configureStore({
   reducer: {
     todos: todoSlice.reducer, // reducer를 넣어줍니다. Slice.reducer를 통해 얻을 수 있습니다.
+    myInfo: myInfoSlice.reducer,
   },
   middleware: [
     sagaMiddleWare, // redux-saga 설정 해주기 (immer, devTools 자체적으로 지원)
